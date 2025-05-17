@@ -1,4 +1,4 @@
-import { notifications } from "@mantine/notifications";
+
 import axiosInstance from "../Interceptor/AxoisInterceptor"
 import { errorNotification } from "../utility/Notification";
 
@@ -30,5 +30,22 @@ const updateStudent= async (student : any) => {
   };
 }
 
+const addNotice = async (notice : any) =>{
+  try{
+    const response = await axiosInstance.post(`/notice/save` , notice);
+    return response.data;
+  }catch (error){
+    throw error;
+  }
+}
+const updateNotice = async (notice : any) =>{
+  try{
+    const response = await axiosInstance.post(`/notice/update` , notice);
+    return response.data;
+  }catch (error){
+    throw error;
+  }
+}
 
-export {CreateStudent , getStudent , updateStudent};
+
+export {CreateStudent , getStudent , updateStudent, addNotice ,updateNotice};
