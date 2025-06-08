@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 
 const SideBar = () => {
   const links = [
+  
     {name:'Dashboard',url:"dashboard",icon:<IconLayoutGrid size={20} className="text-black" stroke={2.5} />},
     {name:'Student',url:"student",icon:<IconUser size={20} className="text-black" stroke={2.5} />},
     {name:'Result',url:"result",icon:<IconFilePercent size={20} className="text-black" stroke={2.5} />},

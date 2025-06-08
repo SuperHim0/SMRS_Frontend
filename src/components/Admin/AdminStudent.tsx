@@ -1,4 +1,4 @@
-import { Badge, Button, Card, Group, Input, Modal,  Select, SimpleGrid, Text, TextInput, Title } from "@mantine/core"
+import { Badge, Button, Card, Group, Input, Modal, SimpleGrid, Text, TextInput } from "@mantine/core"
 import { IconClipboard, IconEdit } from "@tabler/icons-react"
 import { useEffect, useState } from "react";
 import {  getStudent, updateStudent } from "../../Service/AdminService";

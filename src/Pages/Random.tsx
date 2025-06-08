@@ -1,7 +1,6 @@
 import { Button, Group, Select, TextInput } from '@mantine/core';
-import { DateInput, DatePicker } from '@mantine/dates';
+import { DatePicker } from '@mantine/dates';
 import { useForm } from '@mantine/form';
-import React from 'react';
 
 export const Random = () => {
   const form = useForm({

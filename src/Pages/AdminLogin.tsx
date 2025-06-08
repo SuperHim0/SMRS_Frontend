@@ -1,4 +1,4 @@
-import { Button, Card, Group, PasswordInput, TextInput } from "@mantine/core";
+import { Button,  Group, PasswordInput, TextInput } from "@mantine/core";
 import { useForm } from "@mantine/form";
 
 

@@ -1,5 +1,5 @@
-import { ActionIcon, Card, Container, Grid, Image, SimpleGrid, Skeleton, Text } from '@mantine/core'
-import { IconBook, IconBuildingFortress, IconClipboard, IconCreditCard, IconLayoutGrid, IconUser } from '@tabler/icons-react'
+import { ActionIcon, Card, Image, SimpleGrid, Text } from '@mantine/core'
+import { IconBook, IconBuildingFortress, IconClipboard, IconUser } from '@tabler/icons-react'
 
 
 const Dashboard = () => {
@@ -10,7 +10,7 @@ const Dashboard = () => {
     const totalNotification = 50;
     const totalTeacher = 20;
     const totalStaff = 40;
-    const totalBus = 10;
+    // const totalBus = 10;
 
 const studentDetails = [
   { title: 'Total Students', icon:<IconUser size={20} className="text-black" stroke={2.5} />, total:totalClasses},

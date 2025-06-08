@@ -47,5 +47,22 @@ const updateNotice = async (notice : any) =>{
   }
 }
 
+const getResultsOfAllStudents = async () => {
+  try {
+    const response = await axiosInstance.get(`/admin/results`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+}
 
-export {CreateStudent , getStudent , updateStudent, addNotice ,updateNotice};
+const getSubjectsDetailsWithClass = async () =>{
+  try {
+    const response = await axiosInstance.get('admin/subject-combinations');
+    return response.data;
+  }catch (error) {
+    throw error;
+  }
+}
+
+export {CreateStudent , getStudent , updateStudent, addNotice ,updateNotice,getResultsOfAllStudents,getSubjectsDetailsWithClass};

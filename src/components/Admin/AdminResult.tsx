@@ -1,7 +1,22 @@
 import { Badge, Button, Card, Group, Input, SimpleGrid, Text } from "@mantine/core"
 import { IconEdit } from "@tabler/icons-react"
+import { getResultsOfAllStudents } from "../../Service/AdminService"
+import { useEffect } from "react"
+import { useNavigate } from "react-router-dom"
 
 const AdminResult = () => {
+  const navigator = useNavigate();
+
+  useEffect(()=>{
+    findAllStudentResult();
+  })
+
+  const findAllStudentResult =() =>{
+    getResultsOfAllStudents().then((data)=>{
+      console.log(data);
+    })
+  }
+
   return (
     <div className="flex flex-col w-full">
         <div className="m-5">
@@ -10,7 +25,7 @@ const AdminResult = () => {
         </div>
         
         <div>
-            <Button>ADD RESULT</Button>
+            <Button onClick={()=>{navigator('/admin/addresult')}}>ADD RESULT</Button>
         </div>
         <div className="mt-5">
              <SimpleGrid cols={4} spacing="lg">

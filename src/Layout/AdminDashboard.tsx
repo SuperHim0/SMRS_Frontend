@@ -1,7 +1,7 @@
 
 import { Outlet } from "react-router-dom";
 import SideBar from "../components/Admin/SideBar";
-import Dashboard from "../components/Admin/Dashboard";
+
 
 
 const AdminDashboard = () => {
