@@ -1,6 +1,6 @@
 
 import axiosInstance from "../Interceptor/AxoisInterceptor"
-import { errorNotification } from "../utility/Notification";
+import { errorNotification, successNotification } from "../utility/Notification";
 
 const CreateStudent = async (student : any) => {
   try{
@@ -65,4 +65,16 @@ const getSubjectsDetailsWithClass = async () =>{
   }
 }
 
-export {CreateStudent , getStudent , updateStudent, addNotice ,updateNotice,getResultsOfAllStudents,getSubjectsDetailsWithClass};
+const addResultOfStudentSubjectwise = async (result : any) => {
+  try{
+    const response =await axiosInstance.post(`admin/results`,result);
+    successNotification("result added");
+    
+    return response.data;
+  }catch(error){
+    errorNotification("something went wrong...")
+    throw error;
+  }
+}
+
+export {CreateStudent , getStudent , updateStudent, addNotice ,updateNotice,getResultsOfAllStudents,getSubjectsDetailsWithClass,addResultOfStudentSubjectwise};

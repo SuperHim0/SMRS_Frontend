@@ -63,6 +63,7 @@ const AddStudent = () => {
                       if(response){
                           console.log(response);
                           successNotification("student added success");
+                          form.reset();
                       }else{
                         errorNotification("something went Wrong");
                       }

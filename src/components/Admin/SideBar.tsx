@@ -1,6 +1,7 @@
-import { ActionIcon, Avatar, Divider, Flex,Text } from "@mantine/core";
-import {  IconFilePercent,IconUser,IconFileDescription, IconLayoutGrid} from '@tabler/icons-react'
-import { NavLink } from "react-router-dom";
+import { ActionIcon, Avatar, Button, Divider, Flex,Text } from "@mantine/core";
+import {  IconFilePercent,IconUser,IconFileDescription, IconLayoutGrid, IconDoorExit} from '@tabler/icons-react'
+import { NavLink, useNavigate } from "react-router-dom";
+import { successNotification } from "../../utility/Notification";
 
 
 const SideBar = () => {
@@ -12,6 +13,14 @@ const SideBar = () => {
     {name:'Notice',url:"notice",icon:<IconFileDescription size={20} className="text-black" stroke={2.5} />}
 
   ]
+
+  const navigate = useNavigate();
+  const handleLogout= () => {
+        localStorage.removeItem("username");
+        localStorage.removeItem("role");
+        successNotification("logout Done");
+        navigate("/login");
+  }
 
 
   return (
@@ -38,7 +47,9 @@ const SideBar = () => {
       </div>
       </div>
       <div>
+        <button className="flex items-center justify-center bg-fuchsia-300 w-full py-4 rounded-xl cursor-pointer gap-2" onClick={handleLogout}><span className="font-bold"> Log out </span> <IconDoorExit /> </button>
         <Divider my="8" />
+
           <Flex justify="center" align="center" gap={20}>
             <Avatar size={45} />
             <Text>Admin@gmail.com</Text>

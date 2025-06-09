@@ -10,6 +10,7 @@ import AdminResult from '../components/Admin/AdminResult';
 import AdminNotice from '../components/Admin/AdminNotice';
 import AddStudent from '../components/Admin/AddStudent';
 import AddResult from '../components/Admin/AddResult';
+import ProtectedRoutes from './ProtectedRoutes';
 
 
 const AppRoutes = () => {
@@ -21,7 +22,7 @@ const AppRoutes = () => {
         <Route path='/result'  element={<Result/>}/>
         <Route path='/login' element={<AdminLogin/>} />
 
-        <Route path="/admin" element={<AdminDashboard />}>
+        <Route path="/admin" element={<ProtectedRoutes><AdminDashboard/></ProtectedRoutes>}>
           <Route path='' element={<Dashboard/>} />
           <Route path="dashboard" element={<Dashboard />} />
           <Route path='student' element={<AdminStudent/>} /> 
