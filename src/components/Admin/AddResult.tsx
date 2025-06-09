@@ -30,7 +30,7 @@ const AddResult = () => {
   const [StudentDetails, setStudnetDetails] = useState<StudentInfo[]>([]);
   const [selectSubject, setSelectSubject] = useState<ClassSubject[]>([]);
    const [filteredSubjects, setFilteredSubjects] = useState<ClassSubject[]>([]);
-    const [selectedStudentId, setSelectedStudentId] = useState<string | null>(null);
+  // const [selectedStudentId, setSelectedStudentId] = useState<string | null>(null);
 
 
   const fetchAllStudentDetails = () => {
@@ -90,7 +90,7 @@ const AddResult = () => {
    const handleStudentChange = (studentId: string | null) => {
     console.log(studentId);
     
-    setSelectedStudentId(studentId);
+    // setSelectedStudentId(studentId);
     form.setFieldValue("studentId", studentId || "");
 
     if (studentId) {
@@ -123,7 +123,7 @@ const AddResult = () => {
     };
 
     addResultOfStudentSubjectwise(payload).then((data)=>{
-      // console.log(data);
+      console.log(data);
       form.reset();
       successNotification("result updated");
       
